@@ -1,0 +1,188 @@
+$BlackDark:#222629;
+$BlackLight:#474B4F;
+$BlackLighter:#6B6E70;
+$Green:#61892F;
+$LighterGreen:#88C232;
+$font:#F2F2F2;
+.App{
+
+}
+.Header{
+  transform: rotateX(0) translateZ(100px);
+  transform-origin: bottom;
+  position: fixed;
+  background-color: $BlackLight;
+  height: 150vh;
+  width: 90%;
+  padding: 5%;
+  z-index: 1;
+
+  .content_box{
+    background-image: url('/black.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: $Green;
+    opacity: 0.8;
+    height: 85vh;
+    position: relative;
+    box-shadow: 2px 2px 5px 5px $BlackDark;
+    .layer {
+    background-color: rgba($Green, 1);
+    position: absolute;
+    clip-path: polygon(0% 0, 58% 0%, 37% 100%, 0 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+    .tags{
+      position: absolute;
+      top: 35vh;
+      left:25%;
+      color: $font;
+      transform: translate(-50%,-50%);
+      opacity: 1 !important;
+      h1{
+        font-size: 8rem;
+        font-weight: 300;
+        margin: .5rem;
+        background-clip: text;
+        color: transparent;
+        animation: movebg 4s linear infinite;
+      }
+      h2{
+        font-size: 3.5rem;
+        margin: .5rem;
+        letter-spacing: .2rem;
+        font-weight: 400;
+        span{
+          color: $BlackDark;
+        }
+      }
+      p{
+        font-size: 1.8rem;
+        padding: 1rem;
+        color: $BlackDark;
+        // font-weight: 300;
+      }
+    }
+
+    .menuBar{
+      position: absolute;
+      right: 3rem;
+      top: 3rem;
+      font-size: 1.5rem;
+      transition: 1s;
+      .firstBar ,.secondBar{
+        width: 4rem;
+        background-color: $LighterGreen;
+        height: .2rem;
+        margin: 1rem 0rem;
+      }
+      .menu{
+        display: none;
+        color:$LighterGreen;
+        padding: .2rem 0rem;
+
+      }
+    }
+    .menuBar:hover{
+      .menu{
+        display: block;
+      }
+      .firstBar ,.secondBar{
+        margin: .1rem 0rem;
+      }
+      cursor: pointer;
+    }
+    .mainMenu{
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $LighterGreen;
+      height: 85vh;
+      animation: comein 1s ease;
+      animation-fill-mode: forwards;
+      ul{
+        list-style: none;
+        font-size: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+      }
+      ul li{
+        margin: 1rem 0rem;
+
+      }
+      ul li:hover{
+        cursor: pointer;
+      }
+      .CloseMenuBar{
+        position: absolute;
+        left: 3rem;
+        top: 3rem;
+        font-size: 1.5rem;
+        transition: 1s;
+        .firstBar ,.secondBar{
+          width: 4rem;
+          background-color: $BlackDark;
+          height: .2rem;
+          margin: 1rem 0rem;
+        }
+        .menu{
+          display: none;
+          color:$BlackDark;
+          padding: .2rem 0rem;
+
+        }
+      }
+      .CloseMenuBar:hover{
+        .menu{
+          display: block;
+        }
+        .firstBar ,.secondBar{
+          margin: .1rem 0rem;
+        }
+        cursor: pointer;
+      }
+    }
+
+  }
+  .myArrow{
+    color:green;
+  }
+
+}
+
+@keyframes comein {
+  0%{
+    width: 0%;
+    opacity: 0
+  }
+  50%{
+    width: 47%;
+    opacity: 0.9;
+  }
+  100%{
+    width: 37%;
+    opacity: 1;
+  }
+}
+@keyframes movebg {
+  0%{
+    background-image: linear-gradient(to right ,$LighterGreen, #fff);
+
+  }
+  100%{
+      background-image: linear-gradient(to right ,#fff, $LighterGreen);
+  }
+}
+
+
+@media only screen and (max-width:700px) {
+  .Header{
+    height: 94.4vh;
+  }
+}

@@ -1,0 +1,156 @@
+$BlackDark:#222629;
+$BlackLight:#474B4F;
+$BlackLighter:#6B6E70;
+$Green:#61892F;
+$LighterGreen:#88C232;
+$font:#F2F2F2;
+@mixin icon(){
+  font-size:4.5rem;
+  color: $LighterGreen;
+  text-align:center;
+  padding: 5%;
+}
+@mixin box(){
+  width:33%;
+  height:100vh;
+  border-right:1px dashed $BlackDark;
+  @include icon;
+  h5{
+    font-size: 2.2rem;
+    margin: 3rem;
+    // font-weight: 400;
+    color: black;
+  }
+  p{
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: .08rem;
+    color: black;
+  }
+  h6{
+    font-size: 2rem;
+    margin: 3rem;
+    color: black;
+    font-weight: 400;
+    color: $LighterGreen;
+  }
+  ul{
+    list-style: none;
+    font-size: 1.7rem;
+    margin: 0px;
+    padding: 0px;
+    color: $BlackDark;
+    line-height: 4rem;
+
+  }
+}
+.Main{
+  padding: 0px;
+  position: relative;
+  top:100vh;
+  z-index:2;
+  height: auto;
+  background-color: $BlackDark;
+  .Header{
+    // position: absolute;
+    height: 80vh;
+    width: 100%;
+    background-color: $Green;
+    .content{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      width:50%;
+      text-align: center;
+      h1{
+        font-size: 3rem
+      }
+      p{
+        font-size: 1.7rem;
+        font-weight: 300;
+      }
+
+    }
+  }
+  .container{
+    position: absolute;
+    height:120vh;
+    width: 100%;
+    background-color: $BlackLight;
+    .box{
+      position: absolute;
+      width: 90%;
+      height: 100%;
+      margin: 0 5%;
+      top:-10vh;
+      background-color: $BlackLight;
+      border-radius: 2rem;
+      box-shadow: 0 0 2px $BlackDark;
+      display: flex;
+      flex-direction: row;
+      .first{
+        @include box;
+      }
+
+      .second{
+        @include box;
+      }
+      .three{
+        @include box;
+        border-right: 0px solid;
+      }
+    }
+    .Gap{
+      height: 50vh;
+      position:absolute;
+      top:120vh;
+      width: 100%;
+      // padding: 0 10%;
+      text-align: center;
+      background-color: rgba($Green,1);
+      h2{
+        font-size: 3rem;
+      }
+      p{
+        font-size: 1.7rem;
+      }
+      h6{
+        letter-spacing: 0rem;
+        line-height: 3rem;
+        font-size: 2rem;
+        font-weight: 300;
+      }
+    }
+    .about{
+      height: 60vh;
+      position:relative;
+      top:170vh;
+      width: 90%;
+      margin: 0 5%;
+      background-color: $BlackLight;
+      box-shadow: 0 0 2px $BlackDark;
+      h1{
+        text-align: center;
+        display: block;
+        margin: 0rem;
+        padding: 2rem;
+        font-size: 3rem;
+        color:$LighterGreen
+      }
+      .box_container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .box{
+          position:relative;
+          width: 30%;
+          top:5vh;
+          height: 40vh;
+          background-color: $Green;
+        }
+      }
+
+    }
+  }
+}
